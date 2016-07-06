@@ -85,6 +85,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="loginAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="B7w-sV-Za3"/>
                                     <segue destination="Kkb-v3-EOU" kind="push" id="lPl-Jw-kyL"/>
                                 </connections>
                             </button>
@@ -126,6 +127,11 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="loginBtn" destination="cy4-aY-OhF" id="vaN-X4-wG2"/>
+                        <outlet property="password" destination="MIB-Ee-kpi" id="CaR-kE-MsP"/>
+                        <outlet property="userName" destination="aAl-am-sTh" id="41d-Vd-4s6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -212,16 +218,6 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请再次输入密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1T3-2t-cq6">
-                                <rect key="frame" x="49" y="174" width="551" height="50"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="1fK-wH-gdw"/>
-                                </constraints>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="mima.png" translatesAutoresizingMaskIntoConstraints="NO" id="wGp-K6-PJl">
                                 <rect key="frame" x="17" y="189" width="21" height="21"/>
                                 <animations/>
@@ -252,7 +248,20 @@
                                 <state key="normal" title="确定">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="register:" destination="0O2-kz-Qer" eventType="touchUpInside" id="78e-4T-ah3"/>
+                                </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请再次输入密码" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1T3-2t-cq6">
+                                <rect key="frame" x="49" y="174" width="551" height="50"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="1fK-wH-gdw"/>
+                                </constraints>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -303,6 +312,11 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="password" destination="vx0-tm-BhE" id="iB6-fq-7Pd"/>
+                        <outlet property="passwordConfirm" destination="1T3-2t-cq6" id="2oh-UM-oeG"/>
+                        <outlet property="userName" destination="Fag-8b-U3b" id="BYF-iM-GNs"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pga-ue-ZzC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

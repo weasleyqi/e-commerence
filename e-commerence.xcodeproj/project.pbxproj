@@ -63,6 +63,7 @@
 		A998D3E71D2AA0D4005525CE /* user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = user.png; sourceTree = "<group>"; };
 		A998D3F01D2AB74F005525CE /* BaseViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseViewController.h; sourceTree = "<group>"; };
 		A998D3F11D2AB74F005525CE /* BaseViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseViewController.m; sourceTree = "<group>"; };
+		A9D2957A1D2D37B200F6CE70 /* Constant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constant.h; sourceTree = "<group>"; };
 		A9DE1C7F1D2BE48B002E695E /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
 		A9DE1C801D2BE48B002E695E /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
 		A9DE1C811D2BE48B002E695E /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
@@ -234,6 +235,7 @@
 				A9F5ED321D2948E400354DC9 /* LaunchScreen.storyboard */,
 				A9F5ED351D2948E400354DC9 /* Info.plist */,
 				A9F5ED241D2948E400354DC9 /* Supporting Files */,
+				A9D2957A1D2D37B200F6CE70 /* Constant.h */,
 			);
 			path = "e-commerence";
 			sourceTree = "<group>";

@@ -7,8 +7,13 @@
 //
 
 #import "LoginViewController.h"
+#import "AFNetworking.h"
+#import "Constant.h"
 
 @interface LoginViewController ()
+@property (strong, nonatomic) IBOutlet UITextField *userName;
+@property (strong, nonatomic) IBOutlet UITextField *password;
+@property (strong, nonatomic) IBOutlet UIButton *loginBtn;
 
 @end
 
@@ -16,12 +21,44 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [_loginBtn.layer setCornerRadius:5];
     // Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+
+- (IBAction)loginAction:(id)sender {
+    [self checkStyle];
+    NSString *url = [NSString stringWithFormat:@"%@/auth/login.jhtml",Server];
+    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+    NSDictionary *parameters = @{@"username" : _userName.text, @"password": _password.text};
+    [manager POST:url parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        NSLog(@"JSON: %@", responseObject);
+        [self doingAfterLogin:[responseObject stringValue]];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        NSLog(@"Error: %@", error);
+    }];
+}
+
+- (void)checkStyle{
+    NSString *msg = @"";
+    if ([_userName.text length] == 0) {
+        msg = @"用户名不能为空！";
+    }else if ([_password.text length]) {
+        msg = @"密码不能为空！";
+    }
+    
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:msg delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [alert show];
+    return;
+}
+
+- (void)doingAfterLogin:(NSString *)param {
+    
 }
 
 /*

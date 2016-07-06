@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A91F6C4A1D2D50E400FC867A /* ShopListCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A91F6C491D2D50E400FC867A /* ShopListCell.m */; };
 		A998D3BC1D2A9E05005525CE /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A998D3BB1D2A9E05005525CE /* LoginViewController.m */; };
 		A998D3BF1D2A9E23005525CE /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A998D3BE1D2A9E23005525CE /* RegisterViewController.m */; };
 		A998D3C31D2A9EA5005525CE /* ShopListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A998D3C21D2A9EA5005525CE /* ShopListViewController.m */; };
@@ -41,6 +42,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A91F6C481D2D50E400FC867A /* ShopListCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopListCell.h; sourceTree = "<group>"; };
+		A91F6C491D2D50E400FC867A /* ShopListCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopListCell.m; sourceTree = "<group>"; };
 		A998D3BA1D2A9E05005525CE /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		A998D3BB1D2A9E05005525CE /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		A998D3BD1D2A9E23005525CE /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
@@ -126,6 +129,8 @@
 				A998D3C21D2A9EA5005525CE /* ShopListViewController.m */,
 				A998D3C41D2A9EB9005525CE /* ShopDetailViewController.h */,
 				A998D3C51D2A9EB9005525CE /* ShopDetailViewController.m */,
+				A91F6C481D2D50E400FC867A /* ShopListCell.h */,
+				A91F6C491D2D50E400FC867A /* ShopListCell.m */,
 			);
 			name = Shop;
 			sourceTree = "<group>";
@@ -337,6 +342,7 @@
 				A9F5ED2C1D2948E400354DC9 /* ViewController.m in Sources */,
 				A998D3C61D2A9EB9005525CE /* ShopDetailViewController.m in Sources */,
 				A9F5ED291D2948E400354DC9 /* AppDelegate.m in Sources */,
+				A91F6C4A1D2D50E400FC867A /* ShopListCell.m in Sources */,
 				A9DE1C9A1D2BE48B002E695E /* AFURLSessionManager.m in Sources */,
 				A9DE1C991D2BE48B002E695E /* AFURLResponseSerialization.m in Sources */,
 				A998D3C31D2A9EA5005525CE /* ShopListViewController.m in Sources */,

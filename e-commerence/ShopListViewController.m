@@ -62,6 +62,7 @@
     ShopListCell *cell = [tableView dequeueReusableCellWithIdentifier:@"shoplistCell"];
     
     cell.imageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:_resultArr[indexPath.row][@"image"]]]];
+    [cell.imageView clipsToBounds];
     cell.shopName = _resultArr[indexPath.row][@"name"];
     cell.shopPrice = _resultArr[indexPath.row][@"price"];
     // Configure the cell...
@@ -70,7 +71,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+    [self performSegueWithIdentifier:@"shopdetail" sender:self];
 }
 
 /*

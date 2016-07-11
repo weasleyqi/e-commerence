@@ -7,6 +7,7 @@
 //
 
 #import "OrderPayViewController.h"
+#import "ViewController.h"
 
 @interface OrderPayViewController ()
 
@@ -22,6 +23,9 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+- (IBAction)backHome:(id)sender {
+    [self.navigationController popToViewController:[self.navigationController.viewControllers objectAtIndex:1] animated:YES];
 }
 
 /*

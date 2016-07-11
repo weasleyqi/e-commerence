@@ -35,10 +35,10 @@
     [self checkStyle];
     NSString *url = [NSString stringWithFormat:@"%@/auth/register.jhtml",Server];
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    NSDictionary *parameters = @{@"username" : _userName.text, @"password": _password.text};
+    NSDictionary *parameters = @{@"username" : _userName.text, @"password": _password.text, @"request": @"HttpServletRequst", @"mobile": @"13290998765"};
     [manager POST:url parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"JSON: %@", responseObject);
-        [self doingAfterRegister:[responseObject stringValue]];
+        [self doingAfterRegister:responseObject];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
     }];
@@ -53,18 +53,33 @@
         str = @"密码不能为空！";
     }else if ([_passwordConfirm.text length] == 0 ){
         str = @"密码确认不能为空！";
-    }else if (_password.text == _passwordConfirm.text) {
+    }else if (_password.text != _passwordConfirm.text) {
         str = @"两次密码不相同！";
     }else{
         
     }
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:str delegate:self cancelButtonTitle:@"" otherButtonTitles:nil];
-    [alert show];
-    return;
+    if ([str length]) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:str delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alert show];
+        return;
+    }
+    
 }
 
 - (void) doingAfterRegister:(NSString *)param {
-    
+    NSLog(@"doing after register %@",param);
+    NSDictionary *dict = (NSDictionary *)param;
+    if ([dict[@"success"] intValue] == 0) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"注册成功" delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        alert.tag = 1000;
+        [alert show];
+    }
+}
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex {
+    if (alertView.tag == 1000) {
+        [self.navigationController popViewControllerAnimated:YES];
+    }
 }
 
 @end

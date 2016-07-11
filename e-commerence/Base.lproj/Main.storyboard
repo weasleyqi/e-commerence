@@ -80,7 +80,6 @@
                                 </state>
                                 <connections>
                                     <action selector="loginAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="B7w-sV-Za3"/>
-                                    <segue destination="Kkb-v3-EOU" kind="push" id="lPl-Jw-kyL"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -116,7 +115,7 @@
                     <navigationItem key="navigationItem" title="登录" id="0YH-gF-nLL">
                         <barButtonItem key="rightBarButtonItem" title="注册" id="1Hl-s5-tAJ">
                             <connections>
-                                <segue destination="0O2-kz-Qer" kind="push" id="qz8-kD-1OA"/>
+                                <segue destination="0O2-kz-Qer" kind="push" identifier="registerSegue" id="qz8-kD-1OA"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -124,6 +123,7 @@
                         <outlet property="loginBtn" destination="cy4-aY-OhF" id="vaN-X4-wG2"/>
                         <outlet property="password" destination="MIB-Ee-kpi" id="CaR-kE-MsP"/>
                         <outlet property="userName" destination="aAl-am-sTh" id="41d-Vd-4s6"/>
+                        <segue destination="Kkb-v3-EOU" kind="show" identifier="loginSegue" id="9Ug-Hn-3Ql"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -319,14 +319,14 @@
                                 <rect key="frame" x="10" y="80" width="580" height="125"/>
                                 <state key="normal" image="shoplist.png"/>
                                 <connections>
-                                    <segue destination="FDK-ZX-dP6" kind="push" id="1vq-tH-uco"/>
+                                    <segue destination="FDK-ZX-dP6" kind="push" identifier="productlistSegue" id="1vq-tH-uco"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mVR-Ag-Dlg">
                                 <rect key="frame" x="10" y="221" width="580" height="125"/>
                                 <state key="normal" title="Button" image="cart.png"/>
                                 <connections>
-                                    <segue destination="bR5-e5-5of" kind="push" id="gSd-AC-fxn"/>
+                                    <segue destination="bR5-e5-5of" kind="push" identifier="cartSegue" id="gSd-AC-fxn"/>
                                 </connections>
                             </button>
                         </subviews>

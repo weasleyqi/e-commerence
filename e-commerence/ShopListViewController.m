@@ -21,13 +21,16 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.navigationController.navigationItem.leftBarButtonItem = nil;
+    
     [self loadData];
+    
 }
 
 - (void)loadData {
-    NSString *url = [NSString stringWithFormat:@"%@/auth/login.jhtml",Server];
+    NSString *url = [NSString stringWithFormat:@"%@/product/list.jhtml",Server];
     AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    NSDictionary *parameters = @{@"username" : @"", @"password": @""};
+    NSDictionary *parameters = @{@"pageNumber" : @"1", @"pageSize": @"1", @"orderType": @"salesDesc", @"productCategoryId": @"0"};
     [manager GET:url parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"JSON: %@", responseObject);
 //        [self doingAfterLogin:[responseObject stringValue]];

@@ -67,9 +67,9 @@
 
 - (void)doingAfterLogin:(NSString *)param {
     [self performSegueWithIdentifier:@"loginSegue" sender:self];
-    UIBarButtonItem *temporaryBarButtonItem = [[UIBarButtonItem alloc] init];
-    temporaryBarButtonItem.title = @"";
-    self.navigationItem.backBarButtonItem = temporaryBarButtonItem;
+//    UIBarButtonItem *temporaryBarButtonItem = [[UIBarButtonItem alloc] init];
+//    temporaryBarButtonItem.title = @"";
+//    self.navigationItem.backBarButtonItem = temporaryBarButtonItem;
 //    self.navigationItem.backBarButtonItem = NULL;
 }
 

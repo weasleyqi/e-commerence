@@ -450,11 +450,31 @@
                     </navigationItem>
                     <connections>
                         <outlet property="shoplistTableView" destination="dTq-Aw-n1x" id="rNJ-QD-Dsi"/>
+                        <segue destination="wRi-GH-WZu" kind="push" identifier="shopdetail" id="2j4-7T-TzG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yGj-Wd-wXP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2449" y="256"/>
+        </scene>
+        <!--商品详情-->
+        <scene sceneID="cjM-08-htv">
+            <objects>
+                <viewController id="wRi-GH-WZu" customClass="ShopDetailViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="IFZ-0t-fur"/>
+                        <viewControllerLayoutGuide type="bottom" id="hpf-pg-2rj"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="5f8-X7-5Pz">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="商品详情" id="x4X-PA-JiN"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CMB-re-dRt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3149" y="256"/>
         </scene>
         <!--购物车-->
         <scene sceneID="DX9-vt-AR3">

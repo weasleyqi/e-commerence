@@ -13,6 +13,7 @@
 
 @interface ShopListViewController ()<UITableViewDelegate,UITableViewDataSource>
 @property (strong, nonatomic) IBOutlet UITableView *shoplistTableView;
+@property (strong, nonatomic) NSArray *resultArr;
 
 @end
 
@@ -21,7 +22,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.navigationController.navigationItem.leftBarButtonItem = nil;
+    
+    self.resultArr = [[NSArray alloc] init];
     
     [self loadData];
     
@@ -33,6 +35,9 @@
     NSDictionary *parameters = @{@"pageNumber" : @"1", @"pageSize": @"1", @"orderType": @"salesDesc", @"productCategoryId": @"0"};
     [manager GET:url parameters:parameters success:^(AFHTTPRequestOperation *operation, id responseObject) {
         NSLog(@"JSON: %@", responseObject);
+        NSDictionary *dict = (NSDictionary *)responseObject;
+        self.resultArr = dict[@"returnValue"][@"products"];
+        [_shoplistTableView reloadData];
 //        [self doingAfterLogin:[responseObject stringValue]];
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         NSLog(@"Error: %@", error);
@@ -46,7 +51,7 @@
 
 #pragma mark - Table view data source
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 10;
+    return [_resultArr count];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -56,9 +61,16 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     ShopListCell *cell = [tableView dequeueReusableCellWithIdentifier:@"shoplistCell"];
     
+    cell.imageView.image = [UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:_resultArr[indexPath.row][@"image"]]]];
+    cell.shopName = _resultArr[indexPath.row][@"name"];
+    cell.shopPrice = _resultArr[indexPath.row][@"price"];
     // Configure the cell...
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
 }
 
 /*
